@@ -7,7 +7,7 @@
 
 using namespace std;
 
-string domain {"example.com"}; // Enter domain here. Empty for Codespace auto-detection.
+string domain {""}; // Enter domain here. Empty for Codespace auto-detection.
 
 int main() {
     if (domain.empty()) {
