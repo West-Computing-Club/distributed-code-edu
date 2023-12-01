@@ -10,11 +10,11 @@ using namespace std;
 
 int create_directories() {
     cout << "Creating directories with template files.\n";
-    vector <string> directories {parseList("directories.txt")};
-    system("mkdir ../students");
+    vector <string> directories {parseList("utilities/directories.txt")};
+    system("mkdir students");
     for (string &i : directories) {
         // Lazy management.
-        string cmd {"mkdir ../students/" + i + " && cp -r template/ ../students/" + i};
+        string cmd {"mkdir students/" + i + " && cp -r utilities/template/ students/" + i};
         cout << "Executing: " << cmd << '\n';
         system(cmd.c_str());
     }

@@ -21,7 +21,7 @@ int main (int argc, char* argv[])  {
     }
 
     else if (strcmp(argv[1], "create_directories") == 0) {
-                std::cout << "creating directory" << std::endl;
+                std::cout << "Creating Directories" << std::endl;
                 return create_directories();
 
 

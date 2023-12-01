@@ -10,7 +10,7 @@ SRCS = lib/tui.cpp lib/parse_list.cpp lib/create_directories.cpp lib/add_file.cp
 
 
 # Object files
-all: openvscodeserver.app
+all: openvscodeserver.app clean
 
 OBJS = $(SRCS:.cpp=.o)
 %.o: %.cpp
@@ -27,6 +27,6 @@ openvscodeserver.app: $(OBJS)
 
 .PHONY: clean
 clean:
-	rm -f $(OBJS) openvscodeserver.app
+	rm -f $(OBJS) 
 
 
