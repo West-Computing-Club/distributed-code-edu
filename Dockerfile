@@ -5,7 +5,7 @@ RUN apt update && export DEBIAN_FRONTEND=noninteractive \
 
 ENV OPENVSCODE_SERVER_VERSION="1.79.2"
 
-RUN cd "/workspaces/$(ls /workspaces | head -n 1)/" && sh install.sh
+RUN sh install.sh
 RUN cp settings.json openvscode-server-v${OPENVSCODE_SERVER_VERSION}-linux-x64/user-data/Machine
 
 RUN cd utilities && make
