@@ -1,10 +1,3 @@
-// This is a fragment of an old TUI library.
-// Use with caution.
-// - ObjectOops
-
-#ifndef TUI_HPP
-#define TUI_HPP
-
 #include <iostream>
 #include <sstream>
 #include <cstring>
@@ -14,8 +7,10 @@
 #include <termios.h>
 #include <sys/ioctl.h>
 
+#include "tui.h"
+
 namespace tin {
-    bool isInit {false};
+    bool isInit {false} ;
     // Note: Assumes that the terminal state is with canonical and echo mode enabled. So it resets to those settings once done.
     bool init() {
         isInit = true;
@@ -65,5 +60,3 @@ namespace tin {
         return c;
     }
 }
-
-#endif

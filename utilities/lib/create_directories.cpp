@@ -2,11 +2,13 @@
 #include <string>
 #include <vector>
 
-#include "parse_list.hpp"
+#include "parse_list.h"
+
+#include "create_directories.h"
 
 using namespace std;
 
-int main() {
+int create_directories() {
     cout << "Creating directories with template files.\n";
     vector <string> directories {parseList("directories.txt")};
     system("mkdir ../students");

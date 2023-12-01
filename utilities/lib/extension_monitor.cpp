@@ -2,8 +2,13 @@
 #include <string>
 #include <vector>
 
-#include "tui.hpp"
-#include "parse_list.hpp"
+#include <unistd.h> 
+
+
+#include "tui.h"
+#include "parse_list.h"
+
+#include "extension_monitor.h"
 
 using namespace std;
 
@@ -13,7 +18,7 @@ const int SLEEP    {10 * 1000000};
 // This should also throw an exception if the devcontainer was created incorrectly.
 const string OPENVSCODE_SERVER_PATH {"openvscode-server-v" + string {getenv("OPENVSCODE_SERVER_VERSION")} + "-linux-x64"};
 
-int main() {
+int extension_monitor() {
     cout << "Monitoring extension status. Press (q) to exit.\nUsing: " + OPENVSCODE_SERVER_PATH + "\n\n";
     vector <string> extensions {parseList("valid_extensions.txt")};
     string expected;

@@ -2,11 +2,12 @@
 #include <string>
 #include <vector>
 
-#include "parse_list.hpp"
+#include "parse_list.h"
 
+#include "remove_file.h"
 using namespace std;
 
-int main(int argc, char **argv) {
+int remove_file(int argc, char **argv) {
     if (argc < 2 || argc > 2) {
         cout << "Must provide one file only.\n";
         return 1;

@@ -1,6 +1,4 @@
-#ifndef PARSE_LIST_HPP
-#define PARSE_LIST_HPP
-
+#include "parse_list.h"
 #include <fstream>
 #include <string>
 #include <vector>
@@ -15,5 +13,3 @@ std::vector <std::string> parseList(const std::string &fileName) {
     fin.close();
     return list;
 }
-
-#endif
