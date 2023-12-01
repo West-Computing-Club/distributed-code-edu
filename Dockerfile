@@ -12,12 +12,18 @@ WORKDIR /app
 COPY install.sh .
 
 RUN sh install.sh
+
+COPY settings.json .
+
 RUN cp settings.json openvscode-server-v${OPENVSCODE_SERVER_VERSION}-linux-x64/user-data/Machine
 
-COPY utilities .
+RUN mkdir utilities
 
+COPY utilities ./utilities
+
+RUN ls
 RUN cd utilities && make
-RUN mv openvscodeserver.app .. && cd ..
+RUN mv ./utilities/openvscodeserver.app . && cd ..
 
 
 # Begin Building the SERVER
@@ -27,6 +33,5 @@ COPY start.sh .
 
 
 # Run the SERVER
-
-CMD [./start.sh]
-
+EXPOSE 3000
+CMD ["./start.sh"]
