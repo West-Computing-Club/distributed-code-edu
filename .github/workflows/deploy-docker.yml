@@ -15,13 +15,13 @@ jobs:
         name: Checkout Code
         uses: actions/checkout@v4
 
-    -
+    - 
         name: Login to ghcr.io
-        run: echo $secrets.PASSWORD | docker login ghcr.io -u {{vars.USER}} --password-stdin 
+        run: echo "${{ secrets.PASSWORD }}" | docker login ghcr.io -u "${{ vars.USER }}" --password-stdin
     -
         name: Build Docker Image
-        run: docker build . -t  "${github.repository_owner}:${env.VERSION}"
+        run: docker build . -t  "${{github.repository_owner}}:${{env.VERSION}}"
     -
         name: Publish Docker Image to ghrc.io
-        run: docker push ghcr.io/${github.repository_owner}:latest
+        run: docker push ghcr.io/$"{{github.repository_owner}}":latest
 
