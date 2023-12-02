@@ -24,5 +24,5 @@ jobs:
         run: docker build . -t  "${{env.IMAGE}}"
     -
         name: Publish Docker Image to ghrc.io
-        run: docker push ghcr.io/"${{ env.USER}}"/$"{{env.IMAGE}}":latest
+        run: docker push ghcr.io/${{ env.USER}}/${{env.IMAGE}}:latest
 
