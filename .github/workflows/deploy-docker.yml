@@ -21,8 +21,8 @@ jobs:
         run: echo "${{ secrets.PASSWORD }}" | docker login ghcr.io -u "${{ vars.USER }}" --password-stdin
     -
         name: Build Docker Image
-        run: docker build . -t  ghcr.io/"${{env.IMAGE}}"
+        run: docker build . -t  ghcr.io/${{env.IMAGE}}${{env.VERSION}}
     -
         name: Publish Docker Image to ghrc.io
-        run: docker push ghcr.io/${{ env.USER}}/${{env.IMAGE}}:latest
+        run: docker push ghcr.io/${{ env.USER}}/${{env.IMAGE}}:${{env.VERSION}}
 
