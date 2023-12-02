@@ -20,9 +20,9 @@ RUN cp settings.json openvscode-server-v${OPENVSCODE_SERVER_VERSION}-linux-x64/u
 RUN mkdir utilities
 
 COPY utilities ./utilities
-
-RUN ls
 RUN cd utilities && make
+
+
 RUN mv ./utilities/openvscodeserver.app . && cd ..
 
 

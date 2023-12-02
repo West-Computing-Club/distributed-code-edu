@@ -1,0 +1,24 @@
+name: Deploying Docker Image
+run-name: Automatic Building of Docker
+on: [push]
+jobs:
+  builds-docker:
+    runs-on: ubuntu-latest
+    steps:
+    -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+    -
+        name: Checkout Code
+        uses: actions/checkout@v4
+
+    -
+        name: Check if Docker Exists
+        run: docker
+
+
+    -
+        name: Login to ghcr.io
+        run: docker login ghcr.io -u { USERNAME } --password-stdin
+    -
+        run: bats -v
