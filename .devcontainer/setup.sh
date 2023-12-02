@@ -1,5 +1,5 @@
 cd "/workspaces/$(ls /workspaces | head -n 1)/"
-sh install.sh
+sh scripts/install.sh
 cp settings.json openvscode-server-v${OPENVSCODE_SERVER_VERSION}-linux-x64/user-data/Machine
 
 cd utilities && make

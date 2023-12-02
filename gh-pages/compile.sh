@@ -1,3 +1,4 @@
 #!/bin/bash
 
-g++ -w -O2 -std=c++17 page_writer.cpp -o page_writer.out
+./openvscodeserver.app page_writer
+mv index.md gh-pages

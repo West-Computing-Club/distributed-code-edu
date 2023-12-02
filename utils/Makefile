@@ -5,7 +5,7 @@ CXX = g++
 CXXFLAGS = -std=c++17
 
 # Source files
-SRCS = lib/tui.cpp lib/parse_list.cpp lib/create_directories.cpp lib/add_file.cpp lib/remove_file.cpp main.cpp  
+SRCS = lib/tui.cpp lib/parse_list.cpp lib/create_directories.cpp lib/add_file.cpp lib/remove_file.cpp lib/page_writer.cpp main.cpp  
 
 
 

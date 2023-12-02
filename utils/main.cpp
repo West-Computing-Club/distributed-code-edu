@@ -2,6 +2,7 @@
 #include "lib/create_directories.h"
 #include "lib/extension_monitor.h"
 #include "lib/remove_file.h"
+#include "lib/page_writer.h"
 
 #include "iostream"
 #include <cstring>
@@ -17,6 +18,12 @@ int main (int argc, char* argv[])  {
     if (strcmp(argv[1], "add_file") == 0) {
         std::cout << "Adding a file..." << std::endl;
         add_file(argc, argv);
+
+    }
+
+    else if (strcmp(argv[1], "page_writer") == 0) {
+        std::cout << "Writing pages ..." << std::endl;
+        page_writer();
 
     }
 
