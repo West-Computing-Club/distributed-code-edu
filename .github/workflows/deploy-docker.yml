@@ -1,6 +1,10 @@
 name: Deploying Docker Image
 run-name: Automatic Building of Docker
-on: [push]
+on: [
+    push:
+        branches:
+            - main
+            - deploy
 jobs:
   builds-docker:
     runs-on: ubuntu-latest
